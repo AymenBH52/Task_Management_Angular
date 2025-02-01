@@ -1,0 +1,51 @@
+<p-table #dt [value]="tasks" [paginator]="true" [rows]="5" [sortField]="'createdAt'" [sortOrder]="-1" class="custom-table">
+    <ng-template pTemplate="header">
+      <tr>
+        
+        <th pSortableColumn="name">Nom <p-sortIcon field="name"></p-sortIcon>
+          <input pInputText type="text" (input)="filterTasks($event, 'name', 'contains')" placeholder="Rechercher..." class="p-column-filter">
+        </th>
+        
+        
+        <th pSortableColumn="status">Statut <p-sortIcon field="status"></p-sortIcon>
+          <p-dropdown [options]="statusOptions" (onChange)="filterTasks($event, 'status', 'equals')" placeholder="Filtrer"></p-dropdown>
+        </th>
+        
+        
+        <th pSortableColumn="createdAt">Date <p-sortIcon field="createdAt"></p-sortIcon>
+          <input pInputText type="date" (change)="filterTasks($event, 'createdAt', 'equals')" class="p-column-filter">
+        </th>
+        
+        <th>Actions</th>
+      </tr>
+    </ng-template>
+    
+    <ng-template pTemplate="body" let-task>
+      <tr>
+
+        <td>{{ task.name }}</td>
+
+        <td class="text-center">
+          <p-checkbox [(ngModel)]="task.status" binary="true" (onChange)="toggleStatus(task)"></p-checkbox>
+        </td>
+
+        <td class="text-center">{{ task.createdAt | date:'short' }}</td>
+
+        <td class="text-center">
+          <button pButton icon="pi pi-trash" class="p-button-danger p-button-sm" (click)="confirmDelete(task)">Supprimer</button>
+        </td>
+
+        <td class="text-center">
+          <button class="btn btn-warning btn-sm" (click)="editTask(task)">Éditer</button>
+        </td>
+
+      </tr>
+    </ng-template>
+  </p-table>
+  
+  <!-- Formulaire d'ajout/édition -->
+<app-task-form></app-task-form>
+
+  <!-- Confirmation -->
+  <p-confirmDialog></p-confirmDialog>
+  

@@ -1,0 +1,88 @@
+/* Tableau*/
+.custom-table th, .custom-table td {
+    text-align: center;  
+    vertical-align: middle;  
+}
+
+.custom-table th:nth-child(1), .custom-table td:nth-child(1) {
+    width: 30%;  
+}
+
+.custom-table th:nth-child(2), .custom-table td:nth-child(2) {
+    width: 20%;  
+}
+
+.custom-table th:nth-child(3), .custom-table td:nth-child(3) {
+    width: 30%; 
+}
+
+.custom-table th:nth-child(4), .custom-table td:nth-child(4) {
+    width: 20%;  
+}
+
+
+.p-datatable .p-datatable-header {
+    padding-bottom: 15px;  
+}
+
+
+.p-datatable .p-datatable-footer {
+    padding-top: 15px; 
+}
+
+
+/* boutons */
+.custom-table button {
+    margin-right: 10px; 
+    padding: 8px 14px;  
+    font-size: 12px;  
+}
+
+.p-button-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.p-button-danger:hover {
+    background-color: #c82333;
+}
+
+.p-button-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.p-button-primary:hover {
+    background-color: #0056b3;
+}
+
+
+/* Responsivité */
+@media (max-width: 768px) {
+    
+    .custom-table button {
+        font-size: 14px;  
+        padding: 10px 14px;
+    }
+
+    .custom-table th, .custom-table td {
+        font-size: 14px;  
+    }
+
+
+    .custom-table th:nth-child(1), .custom-table td:nth-child(1) {
+        width: 35%;  
+    }
+
+    .custom-table th:nth-child(2), .custom-table td:nth-child(2) {
+        width: 25%;  
+    }
+
+    .custom-table th:nth-child(3), .custom-table td:nth-child(3) {
+        width: 25%;  
+    }
+
+    .custom-table th:nth-child(4), .custom-table td:nth-child(4) {
+        width: 15%;
+    }
+}

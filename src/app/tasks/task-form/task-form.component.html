@@ -1,0 +1,19 @@
+
+<button class="btn btn-primary btn-lg" (click)="openDialog()">Ajouter une tâche</button>
+
+
+<p-dialog [(visible)]="display" header="Tâche" [modal]="true" [style]="{width: '50vw'}" [responsive]="true">
+  <div class="p-fluid">
+    <div class="p-field">
+      <label for="name">Nom</label>
+      <input id="name" pInputText [(ngModel)]="task.name" class="form-control" />
+    </div>
+    <div class="p-field">
+      <label>Statut</label>
+      <p-checkbox [(ngModel)]="task.status" binary="true" class="p-checkbox-lg"></p-checkbox>
+    </div>
+    <div class="p-field">
+      <button class="btn btn-success btn-lg" (click)="saveTask()">Enregistrer</button>
+    </div>
+  </div>
+</p-dialog>
